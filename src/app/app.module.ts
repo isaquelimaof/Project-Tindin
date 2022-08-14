@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     CoreModule,
+    MatInputModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: '', redirectTo: 'pageLogin', pathMatch: 'full'

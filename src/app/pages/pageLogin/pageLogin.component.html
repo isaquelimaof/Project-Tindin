@@ -15,11 +15,11 @@
       <h1 class="title-login">SIGN IN</h1>
       <p class="subTitle-login">Insert your Account Information</p>
       <form class="form-input-login" action="/" method="post">
-        <input type="text" name="email" ngModel="requestLogin.email" class="input-login"
+        <input type="text" name="email" [(ngModel)]="requestLogin.email" class="input-login"
           placeholder="Username or Email">
       </form>
       <form class="form-input-password" action="/" method="post">
-        <input type="password" name="password" ngModel="requestLogin.password" id="password" class="input-password"
+        <input type="password" name="password" [(ngModel)]="requestLogin.password"  id="password" class="input-password"
           placeholder="Password">
       </form>
       <button class="button-login" type="button" (click)="doLogin()">Login your Account</button>

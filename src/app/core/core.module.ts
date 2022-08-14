@@ -4,6 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Error404Component } from "./components/error-404/error-404.component";
 import { RouterModule } from "@angular/router";
 import { PageLoginComponents } from "../pages/pageLogin/pageLogin.component";
+import { FormsModule } from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { PageLoginComponents } from "../pages/pageLogin/pageLogin.component";
   ],
   imports: [
     MatToolbarModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: '**', component: Error404Component

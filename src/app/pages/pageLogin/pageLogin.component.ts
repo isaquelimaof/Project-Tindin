@@ -1,9 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component,OnInit } from "@angular/core";
 import { PageLoginService } from "src/app/service/pageLoginService.service";
 import { RequestLogin } from "./model/RequestLogin";
-
-
-
 
 @Component({
   selector: 'pageLogin',
@@ -20,6 +17,7 @@ export class PageLoginComponents implements OnInit {
     this.requestLogin = new RequestLogin();
   }
 
+
   public doLogin(): void {
     this.loginService.doLogin(this.requestLogin).subscribe((data) => {
       console.log(data);
@@ -29,6 +27,8 @@ export class PageLoginComponents implements OnInit {
     }
     );
   }
+
+
 
 
 
