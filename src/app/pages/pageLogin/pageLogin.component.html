@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="corpo-site">
+    <div class="tollbar-login">
+      <h1 class="title-login">SIGN IN</h1>
+      <p class="subTitle-login">Insert your Account Information</p>
+      <form class="form-input-login" action="/" method="post">
+        <input type="text" name="email" ngModel="requestLogin.email" class="input-login"
+          placeholder="Username or Email">
+      </form>
+      <form class="form-input-password" action="/" method="post">
+        <input type="password" name="password" ngModel="requestLogin.password" id="password" class="input-password"
+          placeholder="Password">
+      </form>
+      <button class="button-login" type="button" (click)="doLogin()">Login your Account</button>
+      <p class="text-information">No Account? Send email fabio@tindin.com.br</p>
+    </div>
+  </div>
+
+</body>
+
+</html>
