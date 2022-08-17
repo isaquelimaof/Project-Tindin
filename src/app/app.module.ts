@@ -13,12 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-
+import { MatCardModule } from '@angular/material/card';
+import { PageloginModule } from './pages/pages.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent
-
   ],
   imports: [
     BrowserModule,
@@ -30,8 +31,11 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     CoreModule,
+    PageloginModule,
     MatInputModule,
     FormsModule,
+    CommonModule,
+    MatCardModule,
     RouterModule.forChild([
       {
         path: '', redirectTo: 'pageLogin', pathMatch: 'full'

@@ -4,19 +4,21 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  min-height: 100vh;
-  min-width: 600px;
-  max-width: auto;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+    min-width: 600px;
+    max-width: auto;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding-top: 220px;
 }
+
 
 .menu-tollbar {
   display: flex;

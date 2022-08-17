@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageLoginComponents } from './pages/pageLogin/pageLogin.component';
-import { TelaInicialComponent } from './pages/telaInicial/telaInicial.component';
+import { PageTelaInicialComponent } from './pages/telaInicial/telaInicial.component';
 
 const routes: Routes = [
-  {path: '',component: TelaInicialComponent},
-  {path: 'telaInicial',component: TelaInicialComponent},
-  {path: 'pageLogin', component: PageLoginComponents}
+  {path: '',component: PageTelaInicialComponent},
+  {path: 'telaInicial',component: PageTelaInicialComponent},
+  {path: 'pageLogin', component: PageLoginComponents},
+
 ];
 
 @NgModule({

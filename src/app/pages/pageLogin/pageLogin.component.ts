@@ -1,4 +1,4 @@
-import { Component,OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { PageLoginService } from "src/app/service/pageLoginService.service";
 import { RequestLogin } from "./model/RequestLogin";
 
@@ -17,24 +17,13 @@ export class PageLoginComponents implements OnInit {
     this.requestLogin = new RequestLogin();
   }
 
-
   public doLogin(): void {
-    this.loginService.doLogin(this.requestLogin).subscribe((data) => {
-      console.log(data);
-    },
-    (error) => {
-      console.error(error);
-    }
-    );
+    this.loginService.doLogin(this.requestLogin).subscribe({
+      next: data => {
+        console.log(data);
+        //console.log(this.requestLogin);
+      },
+      error: err => console.log('Error', err)
+    })
   }
-
-
-
-
-
-  /*usuario = { email: '', password: '' };
-  public doLogin(){
-    console.log("Teste Login: " + this.usuario.email + " Senha: " + this.usuario.password)
-  }*/
-
 }

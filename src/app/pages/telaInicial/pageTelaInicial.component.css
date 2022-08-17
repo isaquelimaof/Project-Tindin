@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #252323;
+  padding-top: 10vh;
+  color: aliceblue;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10vh;
+
+}
+
+.carousel-indicators {
+  border-top: 2px solid red;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.carousel-indicators button {}
+
+.carousel-control-prev-icon {
+  border: 2px solid red;
+}
+
+.carousel-control-next-icon {
+  border: 2px solid red;
+}
+
