@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { PageTelaInicialService } from 'src/app/service/pageTelaInicialService.service';
 import { RequestTelaInicial } from './model/RequestTelaInicial';
-import { ResponseTelaInicial } from './model/ResponseTelaInicial';
 
+declare const $: any;
 
 @Component({
   selector: 'telaInicial',
@@ -13,7 +13,6 @@ import { ResponseTelaInicial } from './model/ResponseTelaInicial';
 export class PageTelaInicialComponent implements OnInit {
 
   resquestTelaInicial: RequestTelaInicial[] = [];
-  name!: ResponseTelaInicial[];
 
   constructor(private telaInicialService: PageTelaInicialService) { }
 

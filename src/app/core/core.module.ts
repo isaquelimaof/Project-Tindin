@@ -24,7 +24,11 @@ import { MatCardModule } from "@angular/material/card";
   ],
   exports: [
     NavBarComponent
-  ]
+  ],
+  providers: [],
+  bootstrap: [
+    NavBarComponent,
+    ]
 })
 export class CoreModule {
 

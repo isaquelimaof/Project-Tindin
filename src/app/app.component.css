@@ -1,0 +1,46 @@
+/*
+<body>
+  <div class="corpo-site" name="corpo-site">
+    <div id="carouselExampleCaptions" class="carousel" data-bs-ride="false">
+      <div *ngIf="indicators" class="carousel-dot-container" class="carousel-indicators">
+        <button *ngFor="let dot of resquestTelaInicial;let i=index" class="dot"
+          [ngClass]="{'active': selectedIndex === i}" (click)="selectImage(i)" type="button"
+          data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      </div>
+      <div *ngIf="resquestTelaInicial && resquestTelaInicial.length > 0" class="carousel-inner">
+        <div *ngFor="let fotos of resquestTelaInicial; let i = index" class="carousel-item active">
+          <img [src]="fotos.photos[0].url" [alt]="fotos" [ngClass]="{'fotos-active': selectedIndex === i}"
+            class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{fotos.title}}</h5>
+            <p>{{fotos.mediumPrice | currency: 'BRL'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <div class="card">
+        <img src="https://images3.alphacoders.com/593/593826.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">O melhor jogo Halo 5</h5>
+          <p class="card-text">$50.00</p>
+          <a class="card-nota">7.5/10</a>
+        </div>
+      </div>
+    </ul>
+
+  </div>
+</body>
+*/
+
+/*<div *ngIf="resquestTelaInicial && resquestTelaInicial.length > 0" class="carousel-container">
+<img *ngFor="let fotos of resquestTelaInicial; let i = index" [src]="fotos.photos[0].url" [alt]=""
+  [ngClass]="{'fotos-active': selectedIndex === i}">
+
+<div *ngIf="indicators" class="carousel-dot-container">
+  <span *ngFor="let dot of resquestTelaInicial;let i=index" class="dot" [ngClass]="{'active': selectedIndex === i}"
+    (click)="selectImage(i)">
+  </span>
+</div>
+</div>*/

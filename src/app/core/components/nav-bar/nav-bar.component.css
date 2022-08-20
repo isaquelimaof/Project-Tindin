@@ -1,27 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    min-height: 100vh;
-    min-width: 600px;
-    max-width: auto;
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-    padding-top: 220px;
-}
-
-
-.menu-tollbar {
+.navbar {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background: rgb(255, 56, 56);
@@ -29,6 +9,7 @@
   padding: 35px;
   width: 100%;
   position: fixed;
+  z-index: 3;
   top: 0;
   overflow: hidden;
 }

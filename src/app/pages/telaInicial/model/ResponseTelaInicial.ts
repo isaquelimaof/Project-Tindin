@@ -1,5 +1,6 @@
 export class ResponseTelaInicial {
   jwt!: string;
-  game!: [];
+  game!: [{games: []}];
   games!: [];
+
 }
