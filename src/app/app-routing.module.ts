@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageLoginComponents } from './pages/pageLogin/pageLogin.component';
-import { PageTelaInicialComponent } from './pages/telaInicial/telaInicial.component';
+import { CarouselComponent } from './pages/pageTelaInicial/carousel-component/carouselTelaInicial.component';
+
 
 const routes: Routes = [
-  {path: '',component: PageTelaInicialComponent},
-  {path: 'telaInicial',component: PageTelaInicialComponent},
+  {path: '',component: CarouselComponent},
+  {path: 'carouselTelaInicial',component: CarouselComponent},
   {path: 'pageLogin', component: PageLoginComponents},
 
 ];

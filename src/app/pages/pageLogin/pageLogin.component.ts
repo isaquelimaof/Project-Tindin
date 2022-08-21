@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { PageLoginService } from "src/app/service/pageLoginService.service";
 import { RequestLogin } from "./model/RequestLogin";
 

@@ -5,52 +5,18 @@
 }
 
 body {
-  color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  color: #fff;
   height: auto;
   background-color: #252323;
 }
 
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 100px;
-  margin-bottom: 50px;
+.carousel-caption {
+  color: red;
 }
-
-.carousel-indicators {
-  border-top: 2px solid red;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.corpo-site {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #1a1818;
-  background-attachment: fixed;
-  background-size: 100%;
-  width: 100%;
-  min-height: 100vh;
-  max-width: auto;
-  margin: 0 auto;
-  color: white;
-}
-
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 100px;
-  margin-bottom: 50px;
-}
-
 .carousel-indicators {
   border-top: 2px solid red;
   margin-left: 100px;
@@ -64,17 +30,15 @@ body {
 .carousel-control-next-icon {
   border: 2px solid red;
 }
-
-
-
-
 .carousel-container {
   position: relative;
   margin: auto;
   margin-top: 10rem;
+  margin-bottom: 10rem;
   text-align: center;
   width: 1000px;
   border-radius: 10px;
+  box-shadow: 0 8px 16px #dce1e1;
 }
 
 .carousel-container img {
@@ -82,13 +46,13 @@ body {
   border-radius: 15px;
 }
 
-.carousel-container img.fotos-active {
+.carousel-container img.image-active {
   display: block;
   width: 100%;
   height: 400px;
 }
 
-.fotos-active {
+.image-active {
   display: block;
   width: 100%;
   height: 400px;
@@ -102,6 +66,7 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  z-index: 1;
 }
 
 .dot {
@@ -121,6 +86,7 @@ body {
   opacity: 1;
 }
 
+/*image transition fade effect*/
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -135,16 +101,16 @@ body {
   }
 }
 
-
-
 /*CSS dos Cards*/
 
 .nav {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-bottom: 100px;
+  margin-top: 100px;
   border: none;
 }
 
@@ -176,12 +142,20 @@ body {
 }
 
 .card-title {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 3px;
 }
 
 .card-text {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   margin-top: 3px;
   margin-bottom: 3px;
   font-size: 15px;
@@ -201,31 +175,3 @@ body {
   height: 20px;
   margin-left: 40px;
 }
-
-
-
-
-
-
-
-
-/*<div *ngIf="resquestTelaInicial && resquestTelaInicial.length > 0" class="carousel-container">
-  <img *ngFor="let fotos of resquestTelaInicial; let i = index" [src]="fotos.photos[0].url" [alt]="fotos"
-    [ngClass]="{'fotos-active': selectedIndex === i}" class="d-block w-100">
-
-  <div class="carousel-caption d-none d-md-block">
-    <h5>asdadadsdsadasd</h5>
-    <p>adasdasdasdassadasdadasadas</p>
-  </div>
-</div>
-
-<ul class="nav nav-tabs">
-  <div class="card">
-    <img src="https://images3.alphacoders.com/593/593826.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">O melhor jogo Halo 5</h5>
-      <p class="card-text">$50.00</p>
-      <a class="card-nota">7.5/10</a>
-    </div>
-  </div>
-</ul>*/

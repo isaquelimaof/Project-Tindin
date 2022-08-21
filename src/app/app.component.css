@@ -33,14 +33,3 @@
   </div>
 </body>
 */
-
-/*<div *ngIf="resquestTelaInicial && resquestTelaInicial.length > 0" class="carousel-container">
-<img *ngFor="let fotos of resquestTelaInicial; let i = index" [src]="fotos.photos[0].url" [alt]=""
-  [ngClass]="{'fotos-active': selectedIndex === i}">
-
-<div *ngIf="indicators" class="carousel-dot-container">
-  <span *ngFor="let dot of resquestTelaInicial;let i=index" class="dot" [ngClass]="{'active': selectedIndex === i}"
-    (click)="selectImage(i)">
-  </span>
-</div>
-</div>*/

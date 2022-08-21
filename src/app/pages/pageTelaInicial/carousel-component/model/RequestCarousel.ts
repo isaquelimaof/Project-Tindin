@@ -1,4 +1,5 @@
-export class RequestTelaInicial {
+export class RequestCarousel {
+
   _id!: string;
   description!: string;
   resume!: string;
@@ -23,6 +24,9 @@ export class RequestTelaInicial {
   createdAt!: string;
   updatedAt!: string;
   jwt!: string;
+
 }
+
+
 
 

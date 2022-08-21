@@ -13,8 +13,8 @@ import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-import { PageloginModule } from './pages/pages.module';
 import { CommonModule } from '@angular/common';
+import { PageModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { CommonModule } from '@angular/common';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    PageloginModule,
+    PageModule,
     MatInputModule,
     FormsModule,
     CommonModule,
