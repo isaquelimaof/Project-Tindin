@@ -3,14 +3,14 @@ import { PageTelaInicialService } from 'src/app/service/pageTelaInicialService.s
 import { RequestCarousel } from './model/RequestCarousel';
 
 @Component({
-  selector: 'carouselTelaInicial',
+  selector: 'pageTelaInicial',
   templateUrl: './carouselTelaInicial.component.html',
   styleUrls: ['./carouselTelaInicial.component.css']
 })
 
 export class CarouselComponent implements OnInit {
 
-  @Input() images: RequestCarousel[] = [];
+  @Input() images!: RequestCarousel[];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
   selectedIndex = 0;

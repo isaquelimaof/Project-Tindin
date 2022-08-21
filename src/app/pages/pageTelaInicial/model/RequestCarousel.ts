@@ -4,7 +4,7 @@ export class RequestCarousel {
   description!: string;
   resume!: string;
   photos!: [{ name: string, url: string, _id: string }, { name: string, url: string, _id: string }];
-  videos!: string;
+  videos!: [{ type: string, url: string, _id: string }, { type: string, url: string, _id: string }];
   rating!: number;
   mediumPrice!: number;
   productor!: string;

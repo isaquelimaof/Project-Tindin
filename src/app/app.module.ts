@@ -14,7 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { PageModule } from './pages/pages.module';
+import { PageModule } from './pages/modules/pages.module';
+
 
 @NgModule({
   declarations: [
