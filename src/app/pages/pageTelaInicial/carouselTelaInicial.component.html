@@ -1,32 +1,60 @@
 <body>
   <div id="carouselExampleCaptions" class="carousel-container">
-    <div *ngIf="indicators" class="carousel-dot-container ">
-      <span *ngFor="let dot of images;let i=index" class="dot" [ngClass]="{'active': selectedIndex === i}"
-        (click)="selectImage(i)">
-      </span>
-    </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"
-      *ngIf="controls">
+    <ng-container>
+      <div *ngFor="let image of images; let i = index" class="carousel-inner">
+          <div *ngIf="i !== 10" class="carousel-item active ">
+            <img *ngIf="i !== 10" [src]="image.photos[0].url" [alt]="image.photos[0].url"
+              [ngClass]="{'image-active': selectedIndex === i}" class="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 *ngIf="image">{{image.title}}</h5>
+            </div>
+          </div>
+      </div>
+    </ng-container>
+
+    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev" *ngIf="controls">
       <span class="carousel-control-prev-icon" aria-hidden="true" (click)="onPrevClick()" type="button"></span>
     </button>
+
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"
       *ngIf="controls">
       <i class="carousel-control-next-icon" (click)="onNextClick()"></i>
     </button>
 
-    <div *ngFor="let image of images; let i = index" class="carousel-inner">
-      <div *ngIf="i != null" class="carousel-item active " >
-        <img [src]="image.photos[0].url" [alt]="image.photos" [ngClass]="{'image-active': selectedIndex === i}">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{image.title}}</h5>
-          <p>{{image.tags}}</p>
-        </div>
+    <div *ngIf="indicators" class="carousel-dot-container">
+      <div *ngFor="let dot of images;let i=index">
+        <span *ngIf="i !== 10" class="dot" [ngClass]="{'active': selectedIndex === i}" (click)="selectImage(i)">
+        </span>
       </div>
+
     </div>
+
   </div>
 
+
+  <div class="cards-body">
+    <ul class="nav nav-tabs ">
+      <div *ngFor="let img of images; let i = index" class="card active container">
+        <div *ngIf="img.photos[0]">
+          <img [src]="img.photos[0].url" class="card-img-top" [alt]="img.photos[0]"
+            [ngClass]="{'img-active': selectedIndex === i}">
+          <div class="card-body">
+            <h5 class="card-title">{{img.title}}</h5>
+            <p class="card-text">{{img.mediumPrice | currency:"BRL"}}</p>
+            <a class="card-nota">{{img.rating}}</a>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+
+
 </body>
+
+
+
 
 
 

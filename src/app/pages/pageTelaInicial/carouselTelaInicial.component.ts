@@ -1,3 +1,4 @@
+import { IfStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { PageTelaInicialService } from 'src/app/service/pageTelaInicialService.service';
 import { RequestCarousel } from './model/RequestCarousel';
@@ -10,9 +11,11 @@ import { RequestCarousel } from './model/RequestCarousel';
 
 export class CarouselComponent implements OnInit {
 
-  @Input() images!: RequestCarousel[];
+  @Input() images: RequestCarousel[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
+  @Input() autoSlide = false;
+  @Input() slideInterval = 1800;
   selectedIndex = 0;
   requestCarousel: RequestCarousel[] = [];
 
@@ -21,9 +24,22 @@ export class CarouselComponent implements OnInit {
   ngOnInit(): void {
     this.doCarousel();
 
+    if (this.autoSlide) {
+      this.autoSlideImages();
+    }
+
+    if(this.selectedIndex !== 10) {
+      this.selectImage(this.selectedIndex)
+    }
   }
 
-  public doCarousel() {
+  autoSlideImages(): void {
+    setInterval(() => {
+      this.onNextClick();
+    }, this.slideInterval);
+  }
+
+  doCarousel() {
     this.telaInicialService.doCarousel().subscribe({
       next: result => {
         this.requestCarousel = result.games
@@ -35,8 +51,9 @@ export class CarouselComponent implements OnInit {
 
   // sets index of image on dot/indicator click
   selectImage(index: number): void {
-      this.selectedIndex = index;
+    this.selectedIndex = index;
   }
+
 
   onPrevClick(): void {
     if (this.selectedIndex === 0) {

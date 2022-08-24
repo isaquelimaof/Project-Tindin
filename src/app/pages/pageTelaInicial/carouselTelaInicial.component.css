@@ -9,51 +9,36 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
   height: auto;
-  background-color: #252323;
-}
-
-.carousel-caption h5 {
-  color: rgb(255, 255, 255);
-  font-size: x-large;
-  font-weight: bold;
-  text-shadow: black 0.1em 0.1em 0.2em;
-}
-
-.carousel-caption p {
-  color: rgb(255, 255, 255);
-  font-size:medium;
-  font-weight: bold;
-  text-shadow: black 0.1em 0.1em 0.2em;
-}
-
-.carousel-indicators {
-  border-top: 2px solid red;
-  margin-left: 100px;
-  margin-right: 100px;
+  background-color: #131212;
 }
 
 .carousel-control-prev-icon {
   border: 2px solid red;
+
 }
 
 .carousel-control-next-icon {
   border: 2px solid red;
 }
 .carousel-container {
+  object-fit: cover;
   position: relative;
   margin: auto;
   margin-top: 6rem;
   text-align: center;
-  width: 1100px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px #dce1e1;
+  width: 90%;
+  height: 500px;
 }
 
 .carousel-container img {
   display: none;
-  border-radius: 15px;
+}
+
+.image-active {
+  display: block;
+  width: 100%;
+  height: 400px;
 
 }
 
@@ -64,12 +49,14 @@ body {
 
 }
 
-.image-active {
-  display: block;
-  width: 100%;
-  height: 400px;
-
+.carousel-caption h5 {
+  color: rgb(255, 255, 255);
+  font-size: 3vw;
+  font-weight: bold;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  padding: 5%;
 }
+
 
 .carousel-dot-container {
   position: absolute;
@@ -79,7 +66,6 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-  z-index: 1;
 }
 
 .dot {
@@ -87,16 +73,17 @@ body {
   height: 13px;
   width: 13px;
   margin: 0 5px;
-  background-color: rgb(204, 0, 0);
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
   display: inline-block;
   transition: opacity 0.6s ease;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .active,
 .dot:hover {
   opacity: 1;
+  background: red;
 }
 
 /*image transition fade effect*/
@@ -107,14 +94,12 @@ body {
 
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.2;
   }
   to {
-    opacity: 1;
+    opacity: 0.9;
   }
 }
-
-
 
 .nav {
   display: flex;
@@ -148,11 +133,10 @@ body {
   border-radius: 30%;
   position: relative;
   cursor: pointer;
-  z-index: 1;
   transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-    0 8px 10px 1px rgba(255, 255, 255, 0.712),
-    0 3px 14px 2px rgba(255, 0, 0, 0.12);
+  box-shadow: 0 5px 5px -3px rgb(255, 255, 255),
+    0 8px 10px 1px rgb(0, 0, 0),
+    0 3px 14px 2px rgb(0, 0, 0);
 }
 
 .card-body {

@@ -16,7 +16,6 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { PageModule } from './pages/modules/pages.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
