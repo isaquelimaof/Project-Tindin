@@ -83,7 +83,7 @@ body {
 .active,
 .dot:hover {
   opacity: 1;
-  background: red;
+
 }
 
 /*image transition fade effect*/
@@ -94,10 +94,10 @@ body {
 
 @keyframes fade {
   from {
-    opacity: 0.2;
+    opacity: 0.5;
   }
   to {
-    opacity: 0.9;
+    opacity: 1;
   }
 }
 
@@ -180,4 +180,8 @@ body {
 
 .teste {
   z-index: 2;
+}
+
+h4 {
+  color: #fff;
 }

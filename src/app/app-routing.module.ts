@@ -7,8 +7,9 @@ import { CarouselComponent } from './pages/pageTelaInicial/carouselTelaInicial.c
 
 const routes: Routes = [
   { path: '', component: CarouselComponent },
+  { path: 'pageLogin', component: PageLoginComponents },
   { path: 'pageTelaInicial', component: CarouselComponent },
-  { path: 'pageLogin', component: PageLoginComponents }
+
 ];
 
 @NgModule({

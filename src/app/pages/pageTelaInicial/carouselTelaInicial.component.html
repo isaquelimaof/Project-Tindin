@@ -3,13 +3,15 @@
 
     <ng-container>
       <div *ngFor="let image of images; let i = index" class="carousel-inner">
-          <div *ngIf="i !== 10" class="carousel-item active ">
-            <img *ngIf="i !== 10" [src]="image.photos[0].url" [alt]="image.photos[0].url"
-              [ngClass]="{'image-active': selectedIndex === i}" class="">
+
+          <div *ngIf="image.photos[0]"  class="carousel-item active ">
+            <img [src]="image.photos[0].url" [alt]="image.photos[0]"
+              [ngClass]="{'image-active': selectedIndex === i}" class="fade">
             <div class="carousel-caption d-none d-md-block">
               <h5 *ngIf="image">{{image.title}}</h5>
             </div>
           </div>
+
       </div>
     </ng-container>
 
@@ -37,7 +39,7 @@
   <div class="cards-body">
     <ul class="nav nav-tabs ">
       <div *ngFor="let img of images; let i = index" class="card active container">
-        <div *ngIf="img.photos[0]">
+        <div *ngIf="img.photos.length > 0">
           <img [src]="img.photos[0].url" class="card-img-top" [alt]="img.photos[0]"
             [ngClass]="{'img-active': selectedIndex === i}">
           <div class="card-body">
@@ -49,6 +51,14 @@
       </div>
     </ul>
   </div>
+
+  <ul>
+    <li (click)="autoSlide" *ngFor="let img of images; let i = index">
+      <h4 *ngIf="img.photos">
+        {{i}} --- {{img._id}}
+      </h4>
+    </li>
+  </ul>
 
 
 </body>

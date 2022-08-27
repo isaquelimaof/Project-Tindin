@@ -1,6 +1,7 @@
 export class RequestCarousel {
 
   _id!: string;
+  gameId!: [{token: String}, {user: {_id: String}}];
   description!: string;
   resume!: string;
   photos!: [{ name: string, url: string, _id: string }, { name: string, url: string, _id: string }, { name: string, url: string, _id: string }, { name: string, url: string, _id: string },{ name: string, url: string, _id: string }];
@@ -23,8 +24,6 @@ export class RequestCarousel {
   tags!: [String];
   createdAt!: string;
   updatedAt!: string;
-  jwt!: string;
-
 }
 
 
