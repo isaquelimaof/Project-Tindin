@@ -16,6 +16,8 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { HomeModule } from './layout/home/home.module';
+import { LoginModule } from './account/login/login.module';
 
 @NgModule({
   declarations: [
@@ -35,11 +37,13 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     MatIconModule,
     MatInputModule,
     FormsModule,
+    HomeModule,
+    LoginModule,
     CommonModule,
     MatCardModule,
     RouterModule.forChild([
       {
-        path: '', redirectTo: 'pageLogin', pathMatch: 'full'
+        path: '', redirectTo: 'app-login', pathMatch: 'full'
       }
     ])
   ],

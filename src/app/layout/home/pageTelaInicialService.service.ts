@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { RequestCarousel } from "../../pages/pageTelaInicial/model/RequestCarousel";
-import { ResponseCarousel } from "../../pages/pageTelaInicial/model/ResponseCarousel";
+import { RequestCarousel } from "./model/RequestCarousel";
+import { ResponseCarousel } from "./model/ResponseCarousel";
 
 
 

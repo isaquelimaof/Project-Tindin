@@ -29,6 +29,6 @@ import { HomeComponent } from "./home.component";
 
   ]
 })
-export class PageModule {
+export class HomeModule {
 
 }
