@@ -1,18 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PageLoginService } from 'src/app/service/pageLoginService.service';
-import { PageTelaInicialService } from 'src/app/service/pageTelaInicialService.service';
-import { RequestLogin } from '../pageLogin/model/RequestLogin';
-import { PageLoginComponents } from '../pageLogin/pageLogin.component';
+import { LoginComponent } from 'src/app/account/login/login.component';
+import { RequestLogin } from 'src/app/account/login/model/RequestLogin';
+import { PageLoginService } from 'src/app/account/login/pageLoginService.service';
+import { PageTelaInicialService } from 'src/app/layout/home/pageTelaInicialService.service';
 import { RequestCarousel } from './model/RequestCarousel';
-import { ResponseCarousel } from './model/ResponseCarousel';
 
 @Component({
-  selector: 'pageTelaInicial',
-  templateUrl: './carouselTelaInicial.component.html',
-  styleUrls: ['./carouselTelaInicial.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-
-export class CarouselComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   @Input() images: RequestCarousel[] = [];
   @Input() indicators: boolean = true;
@@ -23,9 +21,9 @@ export class CarouselComponent implements OnInit {
   requestCarousel: RequestCarousel[] = [];
   request: RequestCarousel = new RequestCarousel();
   pageLogin!: RequestLogin;
-  login!: PageLoginComponents;
+  login!: LoginComponent;
   loginService!: PageLoginService;
-  teste!: ResponseCarousel;
+  teste!: RequestCarousel;
 
 
   constructor(private telaInicialService: PageTelaInicialService) { }
@@ -38,19 +36,8 @@ export class CarouselComponent implements OnInit {
       this.autoSlideImages();
     }
 
-    if (this.pageLogin) {
-    this.deleteGame();
-    }
   }
 
-  public deleteGame() {
-    this.telaInicialService.deleteGame().subscribe({
-      next: result => {
-        this.teste.gameId = result.gameId
-      },
-      error: err => console.log('Error', err)
-    })
-  }
 
 
   autoSlideImages(): void {
@@ -96,4 +83,5 @@ export class CarouselComponent implements OnInit {
     }
 
   }
+
 }

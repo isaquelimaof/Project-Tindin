@@ -1,15 +1,15 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { error } from "jquery";
-import { PageLoginService } from "src/app/service/pageLoginService.service";
-import { RequestLogin } from "./model/RequestLogin";
+import { Component, OnInit } from '@angular/core';
+import { RequestLogin } from './model/RequestLogin';
+import { PageLoginService } from './pageLoginService.service';
+
+
 
 @Component({
-  selector: 'pageLogin',
-  templateUrl: './pageLogin.component.html',
-  styleUrls: ['./pageLogin.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class PageLoginComponents implements OnInit {
-
+export class LoginComponent implements OnInit {
   public requestLogin: RequestLogin = new RequestLogin();
 
 
@@ -45,7 +45,3 @@ export class PageLoginComponents implements OnInit {
     })
   }
 }
-
-
-
-

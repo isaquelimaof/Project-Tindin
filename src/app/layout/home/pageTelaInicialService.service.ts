@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { RequestCarousel } from "../pages/pageTelaInicial/model/RequestCarousel";
-import { ResponseCarousel } from "../pages/pageTelaInicial/model/ResponseCarousel";
+import { RequestCarousel } from "../../pages/pageTelaInicial/model/RequestCarousel";
+import { ResponseCarousel } from "../../pages/pageTelaInicial/model/ResponseCarousel";
 
 
 
@@ -25,7 +25,8 @@ export class PageTelaInicialService {
     return this.httpClient.get<ResponseCarousel>(this.telaInicialUrl);
   }
 
-  public deleteGame(): Observable<ResponseCarousel>{
-    return this.httpClient.delete<ResponseCarousel>(this.deleteGameUrl)
+  public deleteGame(_id: string): Observable<RequestCarousel> {
+    return this.httpClient.delete<RequestCarousel>(this.deleteGameUrl + _id)
   }
+
 }

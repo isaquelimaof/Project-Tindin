@@ -1,22 +1,14 @@
 import { NgModule} from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { PageLoginComponents } from "../pageLogin/pageLogin.component";
 import { CommonModule } from "@angular/common";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
-import { CarouselComponent } from "../pageTelaInicial/carouselTelaInicial.component";
-
-
-
-
-
-
+import { HomeComponent } from "./home.component";
 
 @NgModule({
   declarations:
     [
-      PageLoginComponents,
-      CarouselComponent
+      HomeComponent
 
     ],
   imports:
@@ -28,14 +20,12 @@ import { CarouselComponent } from "../pageTelaInicial/carouselTelaInicial.compon
     ],
   exports:
     [
-      PageLoginComponents,
-      CarouselComponent,
+      HomeComponent,
 
     ],
   providers: [],
   bootstrap: [
-    PageLoginComponents,
-    CarouselComponent
+    HomeComponent
 
   ]
 })

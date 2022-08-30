@@ -14,11 +14,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { PageModule } from './pages/modules/pages.module';
+import { CreateAccountComponent } from './account/create-account/create-account.component';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateAccountComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,6 @@ import { PageModule } from './pages/modules/pages.module';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    PageModule,
     MatInputModule,
     FormsModule,
     CommonModule,
