@@ -1,4 +1,3 @@
-<p>login works!</p>
 <body>
 
   <div class="div">
@@ -6,14 +5,15 @@
       <h1 class="title-login">SIGN IN</h1>
       <p class="subTitle-login">Insert your Account Information</p>
       <form class="form-input-login" action="/" method="post">
-        <input type="text" name="email" [(ngModel)]="requestLogin.email" class="input-login"
+        <input id="email" type="email" name="email" [(ngModel)]="requestLogin.email" required  class="input-login"
           placeholder="Username or Email">
       </form>
       <form class="form-input-password" action="/" method="post">
-        <input type="password" name="password" [(ngModel)]="requestLogin.password" id="password" class="input-password"
+        <input type="password" name="password" [(ngModel)]="requestLogin.password" required  id="password" class="input-password"
           placeholder="Password">
       </form>
-      <button class="button-login" type="button" (click)="doLogin()">Login your Account</button>
+      <button class="button-login" type="submit" (click)="onSubmit()">Login your Account</button>
+      <button type="button" class="btn btn-link btn-block" routerLink="/app-create-account">Criar conta</button>
       <p class="text-information">No Account? Send email fabio@tindin.com.br</p>
     </div>
   </div>

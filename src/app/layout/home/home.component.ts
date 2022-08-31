@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LoginComponent } from 'src/app/account/login/login.component';
 import { RequestLogin } from 'src/app/account/login/model/RequestLogin';
-import { PageLoginService } from 'src/app/account/login/pageLoginService.service';
-import { PageTelaInicialService } from 'src/app/layout/home/pageTelaInicialService.service';
+import { HomeService } from 'src/app/layout/home/homeService.service';
 import { RequestCarousel } from './model/RequestCarousel';
 
 @Component({
@@ -22,11 +21,10 @@ export class HomeComponent implements OnInit {
   request: RequestCarousel = new RequestCarousel();
   pageLogin!: RequestLogin;
   login!: LoginComponent;
-  loginService!: PageLoginService;
   teste!: RequestCarousel;
 
 
-  constructor(private telaInicialService: PageTelaInicialService) { }
+  constructor(private telaInicialService: HomeService) { }
 
   ngOnInit(): void {
 
@@ -37,8 +35,6 @@ export class HomeComponent implements OnInit {
     }
 
   }
-
-
 
   autoSlideImages(): void {
     setInterval(() => {

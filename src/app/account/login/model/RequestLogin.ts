@@ -1,5 +1,7 @@
 export class RequestLogin {
   email!: string;
   password!: string;
-  sucesso!: boolean;
+  acesso!: boolean;
+  token!: string;
+  user!: {_id: string};
 }

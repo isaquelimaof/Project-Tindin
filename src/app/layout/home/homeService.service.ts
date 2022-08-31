@@ -10,7 +10,7 @@ import { ResponseCarousel } from "./model/ResponseCarousel";
 @Injectable({
   providedIn: 'root'
 })
-export class PageTelaInicialService {
+export class HomeService {
 
   telaInicialUrl = 'https://api-labs.tindin.com.br/games';
   deleteGameUrl = 'https://api-labs.tindin.com.br/games/{gameId}'
@@ -24,9 +24,4 @@ export class PageTelaInicialService {
   public doCarousel(): Observable<ResponseCarousel> {
     return this.httpClient.get<ResponseCarousel>(this.telaInicialUrl);
   }
-
-  public deleteGame(_id: string): Observable<RequestCarousel> {
-    return this.httpClient.delete<RequestCarousel>(this.deleteGameUrl + _id)
-  }
-
 }

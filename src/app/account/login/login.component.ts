@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { windowWhen } from 'rxjs';
+import { AccountService } from '../shared/account.service';
 import { RequestLogin } from './model/RequestLogin';
-import { PageLoginService } from './pageLoginService.service';
-
-
 
 @Component({
   selector: 'app-login',
@@ -10,19 +9,30 @@ import { PageLoginService } from './pageLoginService.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   public requestLogin: RequestLogin = new RequestLogin();
 
-
-
-
-  constructor(private loginService: PageLoginService) { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
 
   }
 
-  public doLogin() {
-    return this.loginService.doLogin(this.requestLogin).subscribe({
+  async onSubmit() {
+    return this.accountService.login(this.requestLogin).subscribe({
+      next: result => {
+        this.requestLogin = result
+        window.location.href = 'app-home'
+      },
+      error: (err: any) => {
+        return console.error(err)
+      }
+    })
+  }
+}
+
+
+  /* return this.accountService.login(this.requestLogin).subscribe({
       next: data => {
         console.log(data);
 
@@ -42,6 +52,4 @@ export class LoginComponent implements OnInit {
         return (`${this.requestLogin}` + err);
         //error: err => console.log('Error', err)}
       },
-    })
-  }
-}
+    })*/

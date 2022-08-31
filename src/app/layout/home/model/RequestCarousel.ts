@@ -1,5 +1,5 @@
 export class RequestCarousel {
-  
+
   _id!: string;
   description!: string;
   resume!: string;
@@ -23,6 +23,7 @@ export class RequestCarousel {
   tags!: [String];
   createdAt!: string;
   updatedAt!: string;
+  gameId!: {_id: string};
 }
 
 
