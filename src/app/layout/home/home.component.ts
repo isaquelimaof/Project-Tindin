@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LoginComponent } from 'src/app/account/login/login.component';
 import { RequestLogin } from 'src/app/account/login/model/RequestLogin';
+import { ResponseLogin } from 'src/app/account/login/model/ResponseLogin';
 import { HomeService } from 'src/app/layout/home/homeService.service';
 import { RequestCarousel } from './model/RequestCarousel';
+import { ResponseCarousel } from './model/ResponseCarousel';
 
 @Component({
   selector: 'app-home',
@@ -21,19 +23,16 @@ export class HomeComponent implements OnInit {
   request: RequestCarousel = new RequestCarousel();
   pageLogin!: RequestLogin;
   login!: LoginComponent;
-  teste!: RequestCarousel;
+  teste!: RequestLogin;
 
 
   constructor(private telaInicialService: HomeService) { }
 
   ngOnInit(): void {
-
-    this.doCarousel();
-
-    if (this.autoSlide) {
-      this.autoSlideImages();
-    }
-
+      this.doCarousel();
+      if (this.autoSlide) {
+        this.autoSlideImages();
+      }
   }
 
   autoSlideImages(): void {
@@ -45,7 +44,6 @@ export class HomeComponent implements OnInit {
   doCarousel() {
     this.telaInicialService.doCarousel().subscribe({
       next: result => {
-        //this.requestCarousel = result.games
         this.images = result.games
       },
       error: err => console.log('Error', err)

@@ -6,7 +6,14 @@
     <input class="input-pesquisa" type="search" name="pesquisa" placeholder="Search Game Here">
     <button class="button-pesquisa" mat-raised-button type="button">SEARCH</button>
   </form>
-  <div class="logo-login expand-lg ">
-    <img routerLink="/app-login" class="img-login" src="assets/imgs/user1.png" alt="logo-login">
+  <div class=" ">
+
   </div>
+<div class="dropdown logo-login expand-lg">
+
+  <div class="dropdown-content">
+    <a (click)="logout()">Logout</a>
+  </div>
+  <img routerLink="/app-login" class="img-login" src="assets/imgs/user1.png" alt="logo-login">
+</div>
 </nav>

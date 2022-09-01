@@ -4,6 +4,8 @@ import { CommonModule } from "@angular/common";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { LoginComponent } from "./login.component";
+import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { LoginComponent } from "./login.component";
       FormsModule,
       CommonModule,
       MatToolbarModule,
+      RouterModule,
+      HttpClientModule,
       MatCardModule,
     ],
   exports:

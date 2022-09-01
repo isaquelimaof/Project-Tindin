@@ -4,6 +4,9 @@ import { CommonModule } from "@angular/common";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { HomeComponent } from "./home.component";
+import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations:
@@ -16,6 +19,9 @@ import { HomeComponent } from "./home.component";
       FormsModule,
       CommonModule,
       MatToolbarModule,
+      RouterModule,
+      MatIconModule,
+      HttpClientModule,
       MatCardModule,
     ],
   exports:

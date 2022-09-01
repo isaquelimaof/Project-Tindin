@@ -16,7 +16,7 @@ export class AccountService {
   public login(requestLogin: RequestLogin): Observable<RequestLogin> {
     this.httpClient.post<RequestLogin>(`${this.loginUrl}`, requestLogin).subscribe({
       next: result => {
-       window.localStorage.setItem('token','_id');
+       window.localStorage.setItem(this.resLogin.token, this.resLogin.token);
         return result;
       }
     })
@@ -28,4 +28,7 @@ export class AccountService {
       resolve(true);
     });
   }
+
+
+
 }

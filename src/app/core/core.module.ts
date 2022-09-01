@@ -5,6 +5,8 @@ import { Error404Component } from "./components/error-404/error-404.component";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
+import { HttpClientModule } from "@angular/common/http";
+import { MatIconModule } from "@angular/material/icon";
 
 
 @NgModule({
@@ -15,6 +17,9 @@ import { MatCardModule } from "@angular/material/card";
   imports: [
     MatToolbarModule,
     FormsModule,
+    RouterModule,
+    HttpClientModule,
+    MatIconModule,
     MatCardModule,
     RouterModule.forChild([
       {

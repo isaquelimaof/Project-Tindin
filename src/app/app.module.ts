@@ -30,6 +30,7 @@ import { LoginModule } from './account/login/login.module';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
+    MatIconModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,

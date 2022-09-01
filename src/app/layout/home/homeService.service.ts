@@ -24,4 +24,5 @@ export class HomeService {
   public doCarousel(): Observable<ResponseCarousel> {
     return this.httpClient.get<ResponseCarousel>(this.telaInicialUrl);
   }
+
 }
