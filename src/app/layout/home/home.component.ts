@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LoginComponent } from 'src/app/account/login/login.component';
 import { RequestLogin } from 'src/app/account/login/model/RequestLogin';
 import { ResponseLogin } from 'src/app/account/login/model/ResponseLogin';
+import { AccountService } from 'src/app/account/shared/account.service';
 import { HomeService } from 'src/app/layout/home/homeService.service';
 import { RequestCarousel } from './model/RequestCarousel';
 import { ResponseCarousel } from './model/ResponseCarousel';
@@ -13,26 +14,30 @@ import { ResponseCarousel } from './model/ResponseCarousel';
 })
 export class HomeComponent implements OnInit {
 
-  @Input() images: RequestCarousel[] = [];
+  @Input() listGames: RequestCarousel[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
   @Input() autoSlide = true;
   @Input() slideInterval = 1500;
   selectedIndex = 0;
-  requestCarousel: RequestCarousel[] = [];
-  request: RequestCarousel = new RequestCarousel();
-  pageLogin!: RequestLogin;
+  requestCarousel: RequestCarousel = new RequestCarousel();
+  requestLogin!: RequestLogin;
   login!: LoginComponent;
-  teste!: RequestLogin;
 
 
-  constructor(private telaInicialService: HomeService) { }
+
+  constructor(private telaInicialService: HomeService, private accountService: AccountService) { }
 
   ngOnInit(): void {
-      this.doCarousel();
-      if (this.autoSlide) {
-        this.autoSlideImages();
-      }
+    this.doListGames();
+    if (this.autoSlide) {
+      this.autoSlideImages();
+    }
+  }
+
+
+  deleteGame(): void {
+    this.telaInicialService.deleteGame(this.requestCarousel._id);
   }
 
   autoSlideImages(): void {
@@ -41,10 +46,18 @@ export class HomeComponent implements OnInit {
     }, this.slideInterval);
   }
 
-  doCarousel() {
-    this.telaInicialService.doCarousel().subscribe({
+  doUpdateGames() {
+    this.telaInicialService.doUpdateGames(this.requestCarousel).subscribe({
       next: result => {
-        this.images = result.games
+        this.listGames = result.games
+      }
+    })
+  }
+
+  doListGames() {
+    this.telaInicialService.doListGames().subscribe({
+      next: result => {
+        this.listGames = result.games
       },
       error: err => console.log('Error', err)
     })
@@ -59,7 +72,7 @@ export class HomeComponent implements OnInit {
 
   onPrevClick(): void {
     if (this.selectedIndex === 0) {
-      this.selectedIndex = this.images.length - 1;
+      this.selectedIndex = this.listGames.length - 1;
     } else {
       this.selectedIndex--;
     }
@@ -67,7 +80,7 @@ export class HomeComponent implements OnInit {
 
   onNextClick(): void {
     if (this.selectedIndex !== 9) {
-      if (this.selectedIndex === this.images.length - 1) {
+      if (this.selectedIndex === this.listGames.length - 1) {
         this.selectedIndex = 0;
       } else {
         this.selectedIndex++;
@@ -78,4 +91,7 @@ export class HomeComponent implements OnInit {
 
   }
 
+  getAuthorizationToken () {
+    console.log(this.accountService.requestLogin.token)
+  }
 }

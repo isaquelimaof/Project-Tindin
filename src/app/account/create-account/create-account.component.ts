@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RequestLogin } from '../login/model/RequestLogin';
+import { AccountService } from '../shared/account.service';
 
 @Component({
   selector: 'app-create-account',
@@ -7,11 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor() { }
+  requestLogin!: RequestLogin;
+
+  constructor( private accountService: AccountService,private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit (){}
+  /*async onSubmit (){
+    try {
+      const result = await this.accountService.createAccount(this.requestLogin);
+      this.router.navigate(['app-home'])
+
+      // exibir uma msg amigavel aqui
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
+  }*/
 
 }

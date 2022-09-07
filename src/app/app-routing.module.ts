@@ -21,13 +21,12 @@ const routes: Routes = [
     path: '',
     component: AuthenticationComponent,
     children: [
-      { path: '', redirectTo:'app-login', pathMatch: 'full'},
+      { path: '', redirectTo: 'app-login', pathMatch: 'full' },
       { path: 'app-login', component: LoginComponent },
       { path: 'app-create-account', component: CreateAccountComponent },
     ]
-  }
-
-
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -1,18 +1,15 @@
-<p>home works!</p>
 <body>
   <div id="carouselExampleCaptions" class="carousel-container">
 
-    <ng-container>
-      <div *ngFor="let image of images; let i = index" class="carousel-inner">
-
-          <div *ngIf="image.photos[0]"  class="carousel-item active ">
-            <img [src]="image.photos[0].url" [alt]="image.photos[0]"
-              [ngClass]="{'image-active': selectedIndex === i}" class="fade">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 *ngIf="image">{{image.title}}</h5>
-            </div>
+    <ng-container >
+      <div *ngFor="let image of listGames; let i = index" class="carousel-inner">
+        <div *ngIf="image.photos[0]" class="carousel-item active ">
+          <img [src]="image.photos[0].url" [alt]="image.photos[0]" [ngClass]="{'image-active': selectedIndex === i}"
+            class="fade">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 *ngIf="image">{{image.title}}</h5>
           </div>
-
+        </div>
       </div>
     </ng-container>
 
@@ -27,7 +24,7 @@
     </button>
 
     <div *ngIf="indicators" class="carousel-dot-container">
-      <div *ngFor="let dot of images;let i=index">
+      <div *ngFor="let dot of listGames;let i=index">
         <span *ngIf="i !== 10" class="dot" [ngClass]="{'active': selectedIndex === i}" (click)="selectImage(i)">
         </span>
       </div>
@@ -39,7 +36,7 @@
 
   <div class="cards-body">
     <ul class="nav nav-tabs ">
-      <div *ngFor="let img of images; let i = index" class="card active container">
+      <div *ngFor="let img of listGames; let i = index" class="card active container">
         <div *ngIf="img.photos.length > 0">
           <img [src]="img.photos[0].url" class="card-img-top" [alt]="img.photos[0]"
             [ngClass]="{'img-active': selectedIndex === i}">
@@ -49,12 +46,13 @@
             <a class="card-nota">{{img.rating}}</a>
           </div>
         </div>
+        <button (click)="deleteGame()">Delete</button>
       </div>
     </ul>
   </div>
 
   <ul>
-    <li (click)="autoSlide" *ngFor="let img of images; let i = index">
+    <li (click)="autoSlide" *ngFor="let img of listGames; let i = index">
       <h4 *ngIf="img.photos">
         {{i}} --- {{img._id}}
       </h4>

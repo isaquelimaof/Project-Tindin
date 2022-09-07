@@ -35,6 +35,7 @@ import { LoginModule } from './account/login/login.module';
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
+    AppRoutingModule,
     MatIconModule,
     MatInputModule,
     FormsModule,

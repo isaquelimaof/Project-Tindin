@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RequestLogin } from '../login/model/RequestLogin';
+import jwt_decode from 'jwt-decode';
+import { ResponseLogin } from '../login/model/ResponseLogin';
 
 @Injectable({
   providedIn: 'root'
@@ -9,26 +11,58 @@ import { RequestLogin } from '../login/model/RequestLogin';
 export class AccountService {
 
   loginUrl = 'https://api-labs.tindin.com.br/auth';
-  resLogin: RequestLogin = new RequestLogin();
+  requestLogin!: RequestLogin;
 
   constructor(private httpClient: HttpClient) { }
 
-  public login(requestLogin: RequestLogin): Observable<RequestLogin> {
-    this.httpClient.post<RequestLogin>(`${this.loginUrl}`, requestLogin).subscribe({
-      next: result => {
-       window.localStorage.setItem(this.resLogin.token, this.resLogin.token);
-        return result;
-      }
-    })
-    return this.httpClient.post<RequestLogin>(`${this.loginUrl}`, requestLogin)
-  }
-
-  createAccount(account: any) {
-    return new Promise((resolve) => {
-      resolve(true);
-    });
+  login(request: RequestLogin) {
+    return this.httpClient.post<RequestLogin>(`${this.loginUrl}`, request);
   }
 
 
+  async createAccount(account: any) {
+    const result = this.httpClient.post<any>(`${this.loginUrl}/users`, account).subscribe();
+    return result;
 
+  }
+
+  getAuthorizationToken() {
+    const token = window.localStorage.getItem('token');
+    return token;
+  }
+
+  getTokenExpirationDate(token: string): Date {
+    const decoded: any = jwt_decode(token);
+
+    if (decoded.exp === undefined) {
+      return decoded;
+    }
+
+    const date = new Date(0);
+    date.setUTCSeconds(decoded.exp);
+    return date;
+  }
+
+  isTokenExpired(token?: string): boolean {
+    if (!token) {
+      return true;
+    }
+
+    const date = this.getTokenExpirationDate(token);
+    if (date === undefined) {
+      return false;
+    }
+
+    return !(date.valueOf() > new Date().valueOf());
+  }
+
+  isUserLoggedIn() {
+    const token = this.getAuthorizationToken();
+    if (!token) {
+      return false;
+    } else if (this.isTokenExpired(token)) {
+      return false;
+    }
+    return true;
+  }
 }
