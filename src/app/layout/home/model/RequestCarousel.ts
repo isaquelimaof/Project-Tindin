@@ -10,8 +10,8 @@ export class RequestCarousel {
   productor!: string;
   totalVotes!: number;
   company!: string;
-  lauchDate!: string;
-  releaseYaer!: number;
+  launchDate!: string;
+  releaseYear!: number;
   title!: string;
   studio!: Object;
   platform!: string;

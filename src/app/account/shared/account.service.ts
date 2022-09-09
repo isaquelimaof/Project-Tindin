@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { RequestLogin } from '../login/model/RequestLogin';
 import jwt_decode from 'jwt-decode';
-import { ResponseLogin } from '../login/model/ResponseLogin';
 
 @Injectable({
   providedIn: 'root'
@@ -58,9 +56,9 @@ export class AccountService {
 
   isUserLoggedIn() {
     const token = this.getAuthorizationToken();
-    if (!token) {
-      return false;
-    } else if (this.isTokenExpired(token)) {
+    if (token) {
+      return true;
+    } else if (this.isTokenExpired('token')) {
       return false;
     }
     return true;

@@ -12,11 +12,9 @@ export class AuthGuard implements CanActivate {
 
   constructor(private router: Router,  private accountService: AccountService) { }
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
+  canActivate(): boolean {
     const token = window.localStorage.getItem('token');
-    if (token || this.accountService.isUserLoggedIn()) {
+    if (this.accountService.isUserLoggedIn()) {
       return true;
     } else {
       this.router.navigate(['app-login']);
@@ -24,3 +22,7 @@ export class AuthGuard implements CanActivate {
     }
   }
 }
+
+/*next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+*/

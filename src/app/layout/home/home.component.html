@@ -1,7 +1,7 @@
 <body>
   <div id="carouselExampleCaptions" class="carousel-container">
 
-    <ng-container >
+    <ng-container>
       <div *ngFor="let image of listGames; let i = index" class="carousel-inner">
         <div *ngIf="image.photos[0]" class="carousel-item active ">
           <img [src]="image.photos[0].url" [alt]="image.photos[0]" [ngClass]="{'image-active': selectedIndex === i}"
@@ -33,7 +33,6 @@
 
   </div>
 
-
   <div class="cards-body">
     <ul class="nav nav-tabs ">
       <div *ngFor="let img of listGames; let i = index" class="card active container">
@@ -46,8 +45,14 @@
             <a class="card-nota">{{img.rating}}</a>
           </div>
         </div>
-        <button (click)="deleteGame()">Delete</button>
       </div>
     </ul>
   </div>
+  <div class="teste">
+    <label for="title">Digite o nome: </label>
+    <input type="text" [(ngModel)]="title">
+    <button (click)="alterarTitle()">Ok</button>
+    <p>Titulo: {{title}}</p>
+  </div>
+
 </body>
