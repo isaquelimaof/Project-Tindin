@@ -30,8 +30,8 @@ export class HomeService {
     return this.httpClient.get<ResponseCarousel>(this.lisGameslUrl);
   }
 
-  public doUpdateGames(update: string) {
-    return this.httpClient.put<ResponseCarousel>(this.updateGameslUrl, update);
+  public doUpdateGames(_id: string) {
+    return this.httpClient.put<ResponseCarousel>(this.updateGameslUrl, _id);
   }
 
 }

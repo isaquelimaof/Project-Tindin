@@ -73,16 +73,17 @@ body {
   height: 13px;
   width: 13px;
   margin: 0 5px;
-  background-color: rgb(255, 255, 255);
   border-radius: 50%;
   display: inline-block;
   transition: opacity 0.6s ease;
   opacity: 0.7;
+  background-color: red;
 }
 
 .active,
 .dot:hover {
   opacity: 1;
+  background-color: #fff;
 
 }
 
@@ -130,7 +131,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 30%;
+  border-radius: 10%;
   position: relative;
   cursor: pointer;
   transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
@@ -178,16 +179,3 @@ body {
   height: 150px;
 }
 
-.teste {
-  z-index: 2;
-}
-
-h4 {
-  color: #fff;
-}
-
-
-.teste {
-  color: #fff;
-  font-size: 25px;
-}

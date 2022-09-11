@@ -16,26 +16,26 @@ export class HomeComponent implements OnInit {
   @Input() listGames: RequestCarousel[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
-  @Input() autoSlide = true;
-  @Input() slideInterval = 1500;
+  @Input() autoSlide = false;
+  @Input() slideInterval = 500;
   selectedIndex = 0;
-  requestCarousel!: RequestCarousel ;
+  requestCarousel!: RequestCarousel;
   requestLogin!: RequestLogin;
   login!: LoginComponent;
-
-
 
   constructor(private telaInicialService: HomeService,
     private accountService: AccountService,
     private authGuard: AuthGuard) { }
 
   ngOnInit(): void {
+
     this.doListGames();
+
     if (this.autoSlide) {
       this.autoSlideImages();
     }
-  }
 
+  }
 
   autoSlideImages(): void {
     setInterval(() => {
@@ -58,8 +58,9 @@ export class HomeComponent implements OnInit {
     this.selectedIndex = index;
   }
 
-
   onPrevClick(): void {
+
+
     if (this.selectedIndex === 0) {
       this.selectedIndex = this.listGames.length - 1;
     } else {
@@ -67,38 +68,28 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onNextClick(): void {
-    if (this.selectedIndex !== 9) {
-      if (this.selectedIndex === this.listGames.length - 1) {
-        this.selectedIndex = 0;
-      } else {
-        this.selectedIndex++;
-      }
-    } else if (this.selectedIndex === 9) {
-      this.selectedIndex = 11;
+  onNextClick() {
+    if (this.selectedIndex === this.listGames.length - 1) {
+      this.selectedIndex = 0;
+    } else {
+
+
+            this.selectedIndex++;
+       
     }
-
   }
 
-  getAuthorizationToken() {
-    console.log(this.accountService.requestLogin.token)
-  }
-
-  title: string = '';
-
-  alterarTitle() {
-    if (this.authGuard.canActivate()) {
-      this.telaInicialService.doUpdateGames('62bf3a3df5e33929107719c2').subscribe({
-        next: result => {
-          result[0].games
-          this.requestCarousel.title = 'casa';
-        },
-        error: err => {
-          console.log('ERROR: ', err)
+  updateGame() {
+    this.telaInicialService.doUpdateGames('62de024e1d4e9b74729844b7').subscribe({
+      next: result => {
+        if (this.accountService.getAuthorizationToken()) {
+          this.requestCarousel.title = 'Deu certo'
         }
+        return result;
 
-      })
-    }
+      }
+    })
   }
+
 }
 
