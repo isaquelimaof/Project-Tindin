@@ -7,6 +7,8 @@ import { FormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { HttpClientModule } from "@angular/common/http";
 import { MatIconModule } from "@angular/material/icon";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatButtonModule } from "@angular/material/button";
 
 
 
@@ -21,6 +23,10 @@ import { MatIconModule } from "@angular/material/icon";
     RouterModule,
     HttpClientModule,
     MatIconModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
     MatCardModule,
     RouterModule.forChild([
       {

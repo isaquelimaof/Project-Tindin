@@ -18,6 +18,8 @@ import { CreateAccountComponent } from './account/create-account/create-account.
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { HomeModule } from './layout/home/home.module';
 import { LoginModule } from './account/login/login.module';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -36,8 +38,11 @@ import { LoginModule } from './account/login/login.module';
     MatMenuModule,
     MatButtonModule,
     AppRoutingModule,
+    MatSidenavModule,
+    MatIconModule,
     MatIconModule,
     MatInputModule,
+    MatToolbarModule,
     FormsModule,
     HomeModule,
     LoginModule,

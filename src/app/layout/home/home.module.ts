@@ -7,6 +7,8 @@ import { HomeComponent } from "./home.component";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { MatIconModule } from "@angular/material/icon";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations:
@@ -23,6 +25,8 @@ import { MatIconModule } from "@angular/material/icon";
       MatIconModule,
       HttpClientModule,
       MatCardModule,
+      MatSidenavModule,
+      MatButtonModule
     ],
   exports:
     [

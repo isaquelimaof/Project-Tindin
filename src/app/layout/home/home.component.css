@@ -14,12 +14,12 @@ body {
 }
 
 .carousel-control-prev-icon {
-  border: 2px solid red;
+  border: 4px solid red;
 
 }
 
 .carousel-control-next-icon {
-  border: 2px solid red;
+  border: 4px solid red;
 }
 .carousel-container {
   object-fit: cover;
