@@ -10,7 +10,7 @@ import { HomeComponent } from './layout/home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'app-home',
     component: HomeComponent,
     children: [
       { path: 'app-home', component: HomeComponent },

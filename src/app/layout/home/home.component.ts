@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   @Input() listGames: RequestCarousel[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
-  @Input() autoSlide = false;
-  @Input() slideInterval = 500;
+  @Input() autoSlide = true;
+  @Input() slideInterval = 5000;
   selectedIndex = 0;
   requestCarousel!: RequestCarousel;
   requestLogin!: RequestLogin;
@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
     private authGuard: AuthGuard) { }
 
   ngOnInit(): void {
-
     this.doListGames();
 
     if (this.autoSlide) {
@@ -75,20 +74,8 @@ export class HomeComponent implements OnInit {
 
 
             this.selectedIndex++;
-       
+
     }
-  }
-
-  updateGame() {
-    this.telaInicialService.doUpdateGames('62de024e1d4e9b74729844b7').subscribe({
-      next: result => {
-        if (this.accountService.getAuthorizationToken()) {
-          this.requestCarousel.title = 'Deu certo'
-        }
-        return result;
-
-      }
-    })
   }
 
 }

@@ -2,8 +2,8 @@
 <body>
   <div id="carouselExampleCaptions" class="carousel-container">
 
-    <div *ngFor="let image of listGames; let i = index" class="carousel-item carousel-inner active ">
-      <img *ngIf="i >= 0 && image.highlight" [src]="image.photos[0].url" [alt]="image.photos[0]"
+    <div *ngFor="let image of listGames; let i = index"  class="carousel-item carousel-inner active ">
+      <img *ngIf="i >= 0" [src]="image.photos[0].url" [alt]="image.photos[0]"
         [ngClass]="{'image-active': selectedIndex === i}" class="">
       <div class="carousel-caption d-none d-md-block">
         <h5>{{image.title}}</h5>
@@ -19,7 +19,7 @@
 
     <div class="carousel-dot-container">
       <div *ngFor="let dot of listGames;let i = index">
-        <span *ngIf="i >= 0 && dot.highlight" class="dot" [ngClass]="{'active': selectedIndex === i}"
+        <span class="dot" [ngClass]="{'active': selectedIndex === i}"
           (click)="selectImage(i)">
         </span>
       </div>
@@ -40,7 +40,5 @@
       </div>
     </ul>
   </div>
-
-
 
 </body>

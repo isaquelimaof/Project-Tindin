@@ -80,8 +80,7 @@ body {
   background-color: red;
 }
 
-.active,
-.dot:hover {
+.active {
   opacity: 1;
   background-color: #fff;
 
