@@ -9,13 +9,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatButtonModule } from "@angular/material/button";
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     NavBarComponent,
-    Error404Component
+    Error404Component,
+    FooterComponent
   ],
   imports: [
     MatToolbarModule,
@@ -35,11 +37,13 @@ import { MatButtonModule } from "@angular/material/button";
     ])
   ],
   exports: [
-    NavBarComponent
+    NavBarComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [
     NavBarComponent,
+    FooterComponent
     ]
 })
 export class CoreModule {

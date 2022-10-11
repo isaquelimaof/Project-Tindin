@@ -14,6 +14,9 @@ import { RequestCarousel } from './model/RequestCarousel';
 export class HomeComponent implements OnInit {
 
   @Input() listGames: RequestCarousel[] = [];
+  @Input() listGames2: RequestCarousel[] = [];
+
+  @Input() novoListGames: RequestCarousel[] = [];
   @Input() indicators: boolean = true;
   @Input() controls: boolean = true;
   @Input() autoSlide = true;
@@ -29,7 +32,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.doListGames();
-
     if (this.autoSlide) {
       this.autoSlideImages();
     }
@@ -49,7 +51,21 @@ export class HomeComponent implements OnInit {
       },
       error: err => console.log('Error', err)
     })
+  }
 
+  teste () {
+    this.telaInicialService.doListGames().forEach( element => {
+    this.listGames2 = element.games
+    this.listGames2.forEach((element,index, array) => {
+
+
+
+          console.log()
+
+
+
+    })
+    });
   }
 
   // sets index of image on dot/indicator click
@@ -73,7 +89,7 @@ export class HomeComponent implements OnInit {
     } else {
 
 
-            this.selectedIndex++;
+      this.selectedIndex++;
 
     }
   }

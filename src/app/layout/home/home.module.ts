@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatButtonModule } from "@angular/material/button";
+import { CoreModule } from "src/app/core/core.module";
 
 @NgModule({
   declarations:
@@ -26,7 +27,8 @@ import { MatButtonModule } from "@angular/material/button";
       HttpClientModule,
       MatCardModule,
       MatSidenavModule,
-      MatButtonModule
+      MatButtonModule,
+      CoreModule
     ],
   exports:
     [

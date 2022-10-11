@@ -6,12 +6,14 @@ import { MatCardModule } from "@angular/material/card";
 import { LoginComponent } from "./login.component";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
+import { CoreModule } from "src/app/core/core.module";
+
 
 
 @NgModule({
   declarations:
     [
-      LoginComponent,
+      LoginComponent
 
     ],
   imports:
@@ -22,6 +24,7 @@ import { HttpClientModule } from "@angular/common/http";
       RouterModule,
       HttpClientModule,
       MatCardModule,
+      CoreModule
     ],
   exports:
     [

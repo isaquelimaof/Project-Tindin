@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
+  height:250px;
 }
 
 .navbar {
@@ -11,9 +17,8 @@ body {
   height: 15px;
   padding: 35px;
   width: 100%;
-  position: fixed;
   z-index: 2;
-
+  position: fixed;
 }
 
 .logo-tindin {
@@ -31,11 +36,10 @@ body {
 .logo-tindin:hover {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
     0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-
 }
 
 .logo-tindin img {
-  width:100%;
+  width: 90%;
   margin-left: 6px;
 }
 
@@ -60,7 +64,6 @@ body {
   box-shadow: none;
   width: 300px;
   margin-left: 10px;
-
 }
 
 .input-pesquisa::placeholder {
@@ -69,7 +72,6 @@ body {
 
 .input-pesquisa:focus {
   outline: none;
-
 }
 
 .button-pesquisa {
@@ -171,7 +173,6 @@ body {
   flex-direction: row;
   right: 61px;
 }
-
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;

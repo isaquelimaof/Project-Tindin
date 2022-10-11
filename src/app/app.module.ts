@@ -21,11 +21,13 @@ import { LoginModule } from './account/login/login.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CreateAccountComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+
   ],
   imports: [
     BrowserModule,
